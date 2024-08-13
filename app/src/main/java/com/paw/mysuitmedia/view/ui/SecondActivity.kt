@@ -1,7 +1,10 @@
 package com.paw.mysuitmedia.view.ui
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +14,7 @@ import com.paw.mysuitmedia.databinding.ActivitySecondBinding
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySecondBinding
+    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,36 +26,40 @@ class SecondActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setupToolbar()
         setupAction()
+        setupActivityResultLauncher()
+    }
+
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setupAction() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Second Screen"
-
         val name = intent.getStringExtra("name")
         binding.tvUsername.text = name
 
-        binding.btnChooseUser.setOnClickListener {
+        binding.btnChoseUser.setOnClickListener {
             val intent = Intent(this, ThirdActivity::class.java)
-            startActivityForResult(intent, REQUEST_CODE_SELECT_USER)
+            resultLauncher.launch(intent)
+        }
+    }
+
+    private fun setupActivityResultLauncher() {
+        resultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val selectedUserName = result.data?.getStringExtra("selectedUserName")
+                binding.tvSelectedUser.text = selectedUserName
+            }
         }
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
         return true
-    }
-
-    companion object {
-        const val REQUEST_CODE_SELECT_USER = 1001
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE_SELECT_USER && resultCode == RESULT_OK) {
-            val selectedUserName = data?.getStringExtra("selectedUserName")
-            binding.tvSelectedUser.text = selectedUserName
-        }
     }
 }
