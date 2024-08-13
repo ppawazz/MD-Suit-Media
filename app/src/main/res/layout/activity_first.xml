@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".view.ui.FirstActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_add_image"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="186dp"
+        android:background="@drawable/user_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="62dp"
+        android:background="@drawable/bg_input"
+        android:hint="@string/enter_name"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_add_image" />
+
+    <EditText
+        android:id="@+id/et_palindrome"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_input"
+        android:hint="@string/enter_palindrome"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_name" />
+
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="310dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/bg_btn"
+        android:backgroundTint="@color/unique"
+        android:text="@string/check_palindrome"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_palindrome" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="310dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_btn"
+        android:backgroundTint="@color/unique"
+        android:text="@string/next_activity"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_check" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

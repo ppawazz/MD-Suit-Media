@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Suit Media</string>
+    <string name="enter_name">Name</string>
+    <string name="enter_palindrome">Palindrome</string>
+    <string name="check_palindrome">Check</string>
+    <string name="next_activity">Next</string>
+    <string name="welcome">Welcome</string>
+    <string name="selected_user">Selected User Name</string>
+    <string name="username">Username</string>
+    <string name="choose_user">Choose a User</string>
+</resources>
