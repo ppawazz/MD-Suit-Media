@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.paw.mysuitmedia.databinding.ActivityThirdBinding
-import com.paw.mysuitmedia.model.remote.response.DataItem
+import com.paw.mysuitmedia.model.response.DataItem
 import com.paw.mysuitmedia.view.adapter.UserAdapter
 import com.paw.mysuitmedia.view.viewmodel.UserViewModel
 import kotlinx.coroutines.flow.collectLatest

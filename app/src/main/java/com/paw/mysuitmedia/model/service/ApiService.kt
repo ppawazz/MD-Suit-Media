@@ -1,6 +1,6 @@
-package com.paw.mysuitmedia.model.remote.service
+package com.paw.mysuitmedia.model.service
 
-import com.paw.mysuitmedia.model.remote.response.UserResponse
+import com.paw.mysuitmedia.model.response.UserResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

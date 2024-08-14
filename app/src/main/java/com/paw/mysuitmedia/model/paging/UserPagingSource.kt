@@ -1,9 +1,9 @@
-package com.paw.mysuitmedia.view.paging
+package com.paw.mysuitmedia.model.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.paw.mysuitmedia.model.remote.response.DataItem
-import com.paw.mysuitmedia.model.remote.service.ApiService
+import com.paw.mysuitmedia.model.response.DataItem
+import com.paw.mysuitmedia.model.service.ApiService
 
 class UserPagingSource(
     private val apiService: ApiService, private val pageSize: Int

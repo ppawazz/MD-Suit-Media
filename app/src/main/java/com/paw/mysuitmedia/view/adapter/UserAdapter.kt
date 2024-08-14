@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.paw.mysuitmedia.databinding.ItemUserBinding
-import com.paw.mysuitmedia.model.remote.response.DataItem
+import com.paw.mysuitmedia.model.response.DataItem
 
 class UserAdapter(
     private val listener: OnItemClickListener

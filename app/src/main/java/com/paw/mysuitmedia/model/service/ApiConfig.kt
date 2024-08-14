@@ -1,4 +1,4 @@
-package com.paw.mysuitmedia.model.remote.service
+package com.paw.mysuitmedia.model.service
 
 import com.paw.mysuitmedia.BuildConfig
 import okhttp3.OkHttpClient

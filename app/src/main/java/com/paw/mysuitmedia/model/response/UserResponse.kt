@@ -1,4 +1,4 @@
-package com.paw.mysuitmedia.model.remote.response
+package com.paw.mysuitmedia.model.response
 
 import com.google.gson.annotations.SerializedName
 
