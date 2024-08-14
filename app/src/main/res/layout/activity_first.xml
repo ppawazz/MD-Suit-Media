@@ -13,16 +13,19 @@
         android:layout_width="116dp"
         android:layout_height="116dp"
         android:layout_marginTop="186dp"
+        android:alpha="0"
         android:background="@drawable/user_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:alpha="100" />
 
     <EditText
         android:id="@+id/et_name"
         android:layout_width="310dp"
         android:layout_height="47dp"
         android:layout_marginTop="62dp"
+        android:alpha="0"
         android:background="@drawable/bg_input"
         android:fontFamily="@font/poppins"
         android:hint="@string/enter_name"
@@ -30,13 +33,15 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_add_image" />
+        app:layout_constraintTop_toBottomOf="@id/iv_add_image"
+        tools:alpha="100" />
 
     <EditText
         android:id="@+id/et_palindrome"
         android:layout_width="310dp"
         android:layout_height="47dp"
         android:layout_marginTop="20dp"
+        android:alpha="0"
         android:background="@drawable/bg_input"
         android:fontFamily="@font/poppins"
         android:hint="@string/enter_palindrome"
@@ -44,13 +49,15 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_name" />
+        app:layout_constraintTop_toBottomOf="@id/et_name"
+        tools:alpha="100" />
 
     <Button
         android:id="@+id/btn_check"
         android:layout_width="310dp"
         android:layout_height="41dp"
         android:layout_marginTop="43dp"
+        android:alpha="0"
         android:background="@drawable/bg_btn"
         android:backgroundTint="@color/unique"
         android:fontFamily="@font/poppins"
@@ -58,13 +65,15 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_palindrome" />
+        app:layout_constraintTop_toBottomOf="@id/et_palindrome"
+        tools:alpha="100" />
 
     <Button
         android:id="@+id/btn_next"
         android:layout_width="310dp"
         android:layout_height="41dp"
         android:layout_marginTop="12dp"
+        android:alpha="0"
         android:background="@drawable/bg_btn"
         android:backgroundTint="@color/unique"
         android:fontFamily="@font/poppins"
@@ -72,6 +81,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_check" />
+        app:layout_constraintTop_toBottomOf="@id/btn_check"
+        tools:alpha="100" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

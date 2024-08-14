@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.paw.mysuitmedia.R
 import com.paw.mysuitmedia.databinding.ActivityFirstBinding
 
 class FirstActivity : AppCompatActivity() {
@@ -26,6 +27,7 @@ class FirstActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        playAnimation()
         setupAction()
     }
 
@@ -35,12 +37,12 @@ class FirstActivity : AppCompatActivity() {
             val palindromeInput = binding.etPalindrome.text.toString().trim()
 
             if (name.isEmpty()) {
-                binding.etName.error = "Name cannot be empty"
+                binding.etName.error = getString(R.string.name_cannot_be_empty)
                 return@setOnClickListener
             }
 
             if (palindromeInput.isEmpty()) {
-                binding.etPalindrome.error = "Palindrome input cannot be empty"
+                binding.etPalindrome.error = getString(R.string.palindrome_input_cannot_be_empty)
                 return@setOnClickListener
             }
 
@@ -48,11 +50,12 @@ class FirstActivity : AppCompatActivity() {
                 palindromeInput.replace(" ", "").reversed(), ignoreCase = true
             )
 
-            val message = if (isPalindrome) "isPalindrome" else "not palindrome"
+            val message =
+                if (isPalindrome) getString(R.string.ispalindrome) else getString(R.string.not_palindrome)
 
             AlertDialog.Builder(this)
                 .setMessage(message)
-                .setPositiveButton("OK", null)
+                .setPositiveButton(getString(R.string.ok), null)
                 .show()
         }
 
@@ -62,23 +65,25 @@ class FirstActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-}
 
-//    private fun playAnimation() {
-//        val  = ObjectAnimator.ofFloat(binding.t, View.ALPHA, 1f).setDuration(100)
-//        val  =
-//            ObjectAnimator.ofFloat(binding.t, View.ALPHA, 1f).setDuration(100)
-//        val  =
-//            ObjectAnimator.ofFloat(binding.t, View.ALPHA, 1f).setDuration(100)
-//        val  = ObjectAnimator.ofFloat(binding.t, View.ALPHA, 1f).setDuration(100)
-//
-//        AnimatorSet().apply {
-//            playSequentially(
-//                text,
-//                email,
-//                password,
-//                login
-//            )
-//            startDelay = 100
-//        }.start()
-//    }
+    private fun playAnimation() {
+        val image = ObjectAnimator.ofFloat(binding.ivAddImage, View.ALPHA, 1f).setDuration(100)
+        val etName =
+            ObjectAnimator.ofFloat(binding.etName, View.ALPHA, 1f).setDuration(100)
+        val etPalindrome =
+            ObjectAnimator.ofFloat(binding.etPalindrome, View.ALPHA, 1f).setDuration(100)
+        val check = ObjectAnimator.ofFloat(binding.btnCheck, View.ALPHA, 1f).setDuration(100)
+        val next = ObjectAnimator.ofFloat(binding.btnNext, View.ALPHA, 1f).setDuration(100)
+
+        AnimatorSet().apply {
+            playSequentially(
+                image,
+                etName,
+                etPalindrome,
+                check,
+                next
+            )
+            startDelay = 100
+        }.start()
+    }
+}

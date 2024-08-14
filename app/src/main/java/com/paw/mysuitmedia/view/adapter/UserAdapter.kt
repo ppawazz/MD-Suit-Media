@@ -6,7 +6,6 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.paw.mysuitmedia.databinding.ItemUserBinding
 import com.paw.mysuitmedia.model.remote.response.DataItem
 
@@ -26,7 +25,8 @@ class UserAdapter(
         }
     }
 
-    inner class UserViewHolder(private val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class UserViewHolder(private val binding: ItemUserBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(user: DataItem) {
             Glide.with(binding.root.context)
                 .load(user.avatar)

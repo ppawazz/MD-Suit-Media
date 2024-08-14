@@ -12,4 +12,9 @@
     <string name="item_name">Username</string>
     <string name="last_name">Last Name</string>
     <string name="email">Email</string>
+    <string name="ok">OK</string>
+    <string name="ispalindrome">isPalindrome</string>
+    <string name="not_palindrome">not palindrome</string>
+    <string name="name_cannot_be_empty">Name cannot be empty</string>
+    <string name="palindrome_input_cannot_be_empty">Palindrome input cannot be empty</string>
 </resources>

@@ -36,8 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="?attr/actionBarSize"
             tools:listitem="@layout/item_user" />
-
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
