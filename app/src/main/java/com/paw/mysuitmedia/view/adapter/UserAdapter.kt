@@ -28,12 +28,10 @@ class UserAdapter(
     inner class UserViewHolder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: DataItem) {
-            Glide.with(binding.root.context)
-                .load(user.avatar)
-                .into(binding.ivUser)
-
-            binding.tvItemName.text = "${user.firstName} ${user.lastName}"
+            val fullname = "${user.firstName} ${user.lastName}"
+            binding.tvItemName.text = fullname
             binding.tvEmail.text = user.email
+            Glide.with(binding.root.context).load(user.avatar).into(binding.ivUser)
 
             binding.root.setOnClickListener {
                 listener.onItemClick(user)

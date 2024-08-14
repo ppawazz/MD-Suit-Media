@@ -73,7 +73,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
     //circle image
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     //swipe to refresh
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
