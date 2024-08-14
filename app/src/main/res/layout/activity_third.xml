@@ -7,22 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.ThirdActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_user"
-        android:layout_width="match_parent"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_third"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_user" />
+        app:title="Third Screen"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/ToolbarTitleTextAppearance"
+        app:titleTextColor="@color/black" />
 
-    <ProgressBar
-        android:id="@+id/pb_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar_third">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            tools:listitem="@layout/item_user" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

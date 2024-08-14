@@ -33,7 +33,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     private fun setupToolbar() {
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.toolbarSecond)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
@@ -53,7 +53,9 @@ class SecondActivity : AppCompatActivity() {
         ) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val selectedUserName = result.data?.getStringExtra("selectedUserName")
-                binding.tvSelectedUser.text = selectedUserName
+                if (!selectedUserName.isNullOrEmpty()) {
+                    binding.tvSelectedUser.text = selectedUserName
+                }
             }
         }
     }

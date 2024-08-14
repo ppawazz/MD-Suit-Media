@@ -18,12 +18,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://reqres.in/\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://reqres.in/\"")
         }
     }
     compileOptions {
@@ -49,6 +53,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.fragment:fragment-ktx:1.8.2")
+
+    //paging
+    implementation("androidx.paging:paging-runtime:3.3.2")
 
     //livedata
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
@@ -66,4 +74,7 @@ dependencies {
 
     //circle image
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    //swipe to refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 }
